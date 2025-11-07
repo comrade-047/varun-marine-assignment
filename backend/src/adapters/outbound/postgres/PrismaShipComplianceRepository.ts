@@ -1,7 +1,6 @@
 import { IShipComplianceRepository, ShipComplianceInput } from '../../../core/ports/IShipComplianceRepository';
-import { PrismaClient, ShipCompliance } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import { ShipCompliance } from '@prisma/client';
+import { prisma } from '../../../infrastructure/db/prisma';
 
 export class PrismaShipComplianceRepository implements IShipComplianceRepository {
   

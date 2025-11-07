@@ -1,7 +1,6 @@
 import { IBankRepository, BankEntryInput } from '../../../core/ports/IBankRepository';
-import { PrismaClient, BankEntry } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import { BankEntry } from '@prisma/client';
+import { prisma } from '../../../infrastructure/db/prisma';
 
 export class PrismaBankRepository implements IBankRepository {
   

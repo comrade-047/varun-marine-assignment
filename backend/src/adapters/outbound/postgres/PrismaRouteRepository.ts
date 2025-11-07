@@ -1,8 +1,6 @@
 import { IRouteRepository } from '../../../core/ports/IRouteRepository';
 import { Routes } from '../../../core/domain/Route';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import { prisma } from '../../../infrastructure/db/prisma';
 
 export class PrismaRouteRepository implements IRouteRepository {
   async findAll(): Promise<Routes[]> {

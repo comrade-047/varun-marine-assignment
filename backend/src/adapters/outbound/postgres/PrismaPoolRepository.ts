@@ -1,7 +1,5 @@
 import { IPoolRepository, PoolInput } from '../../../core/ports/IPoolRepository';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import { prisma } from '../../../infrastructure/db/prisma';
 
 export class PrismaPoolRepository implements IPoolRepository {
   
