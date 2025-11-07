@@ -4,11 +4,7 @@
     "target": "ESNext",
     "lib": ["ESNext"],
     "module": "ESNext",
-    
-    // --- THIS IS THE FIX ---
     "types": ["node", "vite/client"],
-    // --- END FIX ---
-    
     "skipLibCheck": true,
 
     /* Bundler mode */
@@ -18,8 +14,9 @@
     "moduleDetection": "force",
     "noEmit": true,
 
-    /* Linting */
+    /* Linting & Safety */
     "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,

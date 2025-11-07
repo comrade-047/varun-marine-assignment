@@ -1,5 +1,6 @@
 import 'dotenv/config'; 
 import express from 'express';
+import cors from 'cors';
 import { createRouteController } from '../../adapters/inbound/http/RouteController';
 import { createComplianceController } from '../../adapters/inbound/http/ComplianceController';  
 import { createBankingController } from '../../adapters/inbound/http/BankingController';
@@ -7,6 +8,7 @@ import { createPoolController } from '../../adapters/inbound/http/PoolController
 
 export async function createApp() {
   const app = express();
+  app.use(cors());
 
   app.use(express.json());
 
