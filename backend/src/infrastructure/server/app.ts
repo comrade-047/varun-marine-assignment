@@ -2,6 +2,8 @@ import express from 'express';
 import 'dotenv/config'; 
 import { createRouteController } from '../../adapters/inbound/http/RouteController';
 import { createComplianceController } from '../../adapters/inbound/http/ComplianceController';  
+import { createBankingController } from '../../adapters/inbound/http/BankingController';
+import { createPoolController } from '../../adapters/inbound/http/PoolController';
 
 export async function createApp() {
   const app = express();
@@ -12,6 +14,8 @@ export async function createApp() {
   });
   app.use('/api', createRouteController());
   app.use('/api', createComplianceController());
+  app.use('/api', createBankingController());
+  app.use('/api', createPoolController());
 
   return app;
 }
