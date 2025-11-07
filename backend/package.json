@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "seed": "dotenv -e .env -- ts-node prisma/seed.ts"
+    "seed": "dotenv -e .env -- ts-node prisma/seed.ts",
+    "dev": "dotenv -e .env -- nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/infrastructure/server/index.ts"
   },
   "keywords": [],
   "author": "comrade47",
