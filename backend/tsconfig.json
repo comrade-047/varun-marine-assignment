@@ -25,5 +25,5 @@
     "resolveJsonModule": true,
     "allowJs": true
   },
-  "include": ["src", "prisma.config.ts"]
+  "include": ["src", "prisma.config.ts", "prisma"]
 }
