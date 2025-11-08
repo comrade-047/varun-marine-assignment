@@ -112,16 +112,15 @@ The backend includes a suite of unit and integration tests.
 ## 📸 Screenshots
 
 ### Routes Tab
-![alt text](<Screenshot 2025-11-07 at 9.53.50 PM.png>)
+![Routes Tab](./screenshots/Screenshot%202025-11-07%20at%209.53.50 PM.png)
 
 ### Compare Tab
-![alt text](<Screenshot 2025-11-07 at 9.54.11 PM.png>)
-
-![alt text](<Screenshot 2025-11-07 at 9.54.15 PM.png>)
+![Compare Tab 1](./screenshots/Screenshot%202025-11-07%20at%209.54.11 PM.png)
+![Compare Tab 2](./screenshots/Screenshot%202025-11-07%20at%209.54.15 PM.png)
 
 ### Banking Tab
-![alt text](<Screenshot 2025-11-07 at 9.54.29 PM.png>)
-![alt text](<Screenshot 2025-11-07 at 9.54.43 PM.png>)
+![Banking Tab 1](./screenshots/Screenshot%202025-11-07%20at%209.54.29 PM.png)
+![Banking Tab 2](./screenshots/Screenshot%202025-11-07%20at%209.54.43 PM.png)
 
 ### Pooling Tab
-![alt text](<Screenshot 2025-11-07 at 9.54.55 PM.png>)
+![Pooling Tab](./screenshots/Screenshot%202025-11-07%20at%209.54.55 PM.png)
