@@ -27,26 +27,30 @@ export function useBanking() {
   const getCompliance = async (shipId: string, year: number) => {
     setState((s) => ({ ...s, loading: true, error: null }));
     try {
-      const data = await api.getAdjustedCb(shipId, year);
+      const data = await api.computeCb(shipId, year);
       setState((s) => ({ ...s, loading: false, compliance: data }));
     } catch (err) {
       console.error(err);
       setState((s) => ({
         ...s,
         loading: false,
-        error: "Failed to fetch compliance balance.",
+        error: "Failed to compute compliance balance.",
       }));
     }
   };
 
-  // Action: Bank a surplus
   const bankSurplus = async (shipId: string, year: number) => {
     setState((s) => ({ ...s, loading: true, error: null }));
     try {
       const result = await api.bankSurplus(shipId, year);
-      setState((s) => ({ ...s, loading: false, lastBankResult: result }));
-      // Refresh the CB data
-      await getCompliance(shipId, year);
+
+      const refreshedData = await api.getAdjustedCb(shipId, year);
+      setState((s) => ({
+        ...s,
+        loading: false,
+        lastBankResult: result,
+        compliance: refreshedData,
+      }));
     } catch (err) {
       console.error(err);
 
@@ -60,7 +64,6 @@ export function useBanking() {
     }
   };
 
-  // Action: Apply a banked amount
   const applyBankedSurplus = async (
     shipId: string,
     year: number,
@@ -69,9 +72,14 @@ export function useBanking() {
     setState((s) => ({ ...s, loading: true, error: null }));
     try {
       const result = await api.applyBankedSurplus(shipId, year, amount);
-      setState((s) => ({ ...s, loading: false, lastApplyResult: result }));
-      // Refresh the CB data
-      await getCompliance(shipId, year);
+
+      const refreshedData = await api.getAdjustedCb(shipId, year);
+      setState((s) => ({
+        ...s,
+        loading: false,
+        lastApplyResult: result,
+        compliance: refreshedData,
+      }));
     } catch (err) {
       console.error(err);
 

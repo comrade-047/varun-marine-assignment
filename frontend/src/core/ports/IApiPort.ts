@@ -7,6 +7,7 @@ export interface IApiPort {
   getComparison(): Promise<RouteComparison>;
 
   // Compliance
+  computeCb(shipId: string, year: number): Promise<ShipCompliance>;
   getAdjustedCb(shipId: string, year: number): Promise<ShipCompliance>;
 
   // Banking

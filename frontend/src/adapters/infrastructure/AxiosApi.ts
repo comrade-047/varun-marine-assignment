@@ -22,6 +22,11 @@ class AxiosApi implements IApiPort {
     return response.data;
   }
 
+  async computeCb(shipId: string, year: number): Promise<ShipCompliance> {
+    const response = await apiClient.get(`/compliance/cb?shipId=${shipId}&year=${year}`);
+    return response.data;
+  }
+
   async getAdjustedCb(shipId: string, year: number): Promise<ShipCompliance> {
     const response = await apiClient.get(`/compliance/adjusted-cb?shipId=${shipId}&year=${year}`);
     return response.data;

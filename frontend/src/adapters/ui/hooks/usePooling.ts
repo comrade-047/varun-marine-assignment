@@ -27,8 +27,6 @@ export function usePooling() {
   const addShipToPool = async (shipId: string, year: number) => {
     let shipAlreadyExists = false;
 
-    // --- THIS IS THE FIX ---
-    // Check for existence first, using the state updater to get the latest state.
     setState((s) => {
       shipAlreadyExists = !!s.stagedShips.find(
         (ship) => ship.ship_id === shipId && ship.year === year
@@ -41,14 +39,10 @@ export function usePooling() {
       // If not, set loading to true and clear errors
       return { ...s, loading: true, error: null, success: null };
     });
-    // --- END FIX ---
-
-    // If the ship was a duplicate, stop here. The state is already updated.
     if (shipAlreadyExists) return;
 
-    // Not a duplicate, so proceed with the API call
     try {
-      const data = await api.getAdjustedCb(shipId, year);
+      const data = await api.computeCb(shipId, year);
       setState((s) => ({
         ...s,
         loading: false,

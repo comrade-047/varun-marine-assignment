@@ -1,4 +1,4 @@
-import { Routes, Route, NavLink, Outlet } from 'react-router-dom';
+import { Routes, Route, NavLink, Outlet, Link } from 'react-router-dom';
 
 import { RoutesTab } from './adapters/ui/tabs/RoutesTab'
 import { CompareTab } from './adapters/ui/tabs/CompareTab';
@@ -19,7 +19,7 @@ function Layout() {
         <nav className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <h1 className="text-xl sm:text-2xl font-semibold text-[#00ED64] tracking-tight">
-              FuelEU Maritime
+              <Link to="/">FuelEU Assignment</Link>
             </h1>
 
             <div className="flex space-x-2 sm:space-x-4">
